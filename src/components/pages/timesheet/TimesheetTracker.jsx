@@ -12,10 +12,12 @@ export default function TimesheetTracker() {
     const [rows, setRows] = useState([])
 
     const handleInputChange = (index, field, value) => {
+        console.log("Heloow oerernljklj")
         const updatedTasks = [...tasks];
         updatedTasks[index][field] = value;
         setTasks(updatedTasks);
     };
+
 
     function createData(index, startTime, endTime, totalHours, remark) {
         return { index, startTime, endTime, totalHours, remark };
@@ -57,6 +59,10 @@ export default function TimesheetTracker() {
         }
 
     };
+
+    // const calculateHours= () => {
+    //     return tasks.reduce((total, task) => total + (parseFloat(task.totalHours) || 0), 0).toFixed(2);
+    // }
 
     const calculateTotalHours = () => {
         return rows.reduce((total, task) => total + (parseFloat(task.totalHours) || 0), 0).toFixed(2);

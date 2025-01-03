@@ -17,7 +17,7 @@ const UserLogin = () => {
            if(actualData.email && actualData.password){
              console.log(actualData)
              document.getElementById("login-form").reset();
-             navigate("/services");
+             navigate("/");
            }else{
             setError({status:false, msg:"All fields are required", type:"error"})
            }
@@ -29,7 +29,7 @@ const UserLogin = () => {
             <Box textAlign='center'>
                 <Button type="submit" variant="contained" sx={{my:3, px:5}}>Login</Button>
             </Box>
-            <NavLink to="/">Forgot Password</NavLink>
+            <NavLink to="/">Forgot Password..</NavLink>
             <Alert severity={error.type}>{error.msg}</Alert>
        </Box>
     )
